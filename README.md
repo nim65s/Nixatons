@@ -31,3 +31,6 @@ sudo systemctl restart nix-daemon.service
 ```
 
 `nix run nixpkgs#hello`
+
+
+### `flake.nix`
