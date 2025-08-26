@@ -1,25 +1,20 @@
 {
   description = "un truc à propos de Nixatons";
 
-  inputs = {
-    nixpkgs = {
-      url = "github:NixOS/nixpkgs/nixos-unstable";
-    };
-  };
+  inputs.nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
-  outputs = inputs:
-  let
-    pkgs = import inputs.nixpkgs {
+  outputs =
+    inputs:
+    let
       system = "x86_64-linux";
-    };
-  in
-  {
-    packages = {
-      x86_64-linux = {
+      pkgs = import inputs.nixpkgs {
+        inherit system;
+      };
+    in
+    {
+      packages.${system} = {
         default = pkgs.hello;
       };
     };
-  };
-
 
 }
