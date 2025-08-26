@@ -14,6 +14,10 @@
     {
       packages.${system} = {
         default = pkgs.hello;
+        # celui la va pas compiler: `nix run -L .#hello-broken`
+        hello-broken = pkgs.hello.overrideAttrs {
+          env.NIX_CFLAGS_COMPILE = "-toto";
+        };
       };
     };
 
