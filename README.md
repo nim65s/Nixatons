@@ -1,6 +1,6 @@
 # Nixatons
 
-## Prérequis
+## Prérequis
 
 - Nix:
 
