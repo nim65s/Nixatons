@@ -24,3 +24,10 @@ Test: `nix run nixpkgs#hello`
 https://github.com/NixOS/nixpkgs/
 
 `ls /nix/store`
+
+```
+echo "experimental-features = nix-command flakes" | sudo tee /etc/nix/nix.conf
+sudo systemctl restart nix-daemon.service
+```
+
+`nix run nixpkgs#hello`
